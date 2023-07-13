@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinate</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      div {
+        width: 250px;
+        height: 250px;
+        background-color: blanchedalmond;
+        margin-bottom: 4px;
+        border-radius: 4px;
+      }
+      .special {
+        background-color: lightsalmon;
+      }
+    </style>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>const tag = document.querySelector('.tag');
+      
+  <div></div>
+  <div class="special"></div>
+  <div></div>
+  <div></div>
+  <script>
+    const screenLog = document.querySelector('.special');
+    document.addEventListener('mousemove',logkey);
+    function logkey(e) {
+      const rect = screenLog.getBoundingClientRect();
+      for (let key in rect) {
+        console.log(key)
+        if (typeof rect[key] !== 'function') {
+          screenLog.innerHTML = `
+      Client x/ y ${e.clientX}, ${e.clientY}
+      rect: ${rect[key]}`
+        }
+      
+      }
+     
+    }
+  </script>
+</body>
+</html>
