@@ -37,17 +37,17 @@
     document.addEventListener('mousemove',logkey);
     function logkey(e) {
       const rect = screenLog.getBoundingClientRect();
+      screenLog.innerHTML = ` Client x/ y ${e.clientX}, ${e.clientY}`
       for (let key in rect) {
-        console.log(key)
         if (typeof rect[key] !== 'function') {
-          screenLog.innerHTML = `
-      Client x/ y ${e.clientX}, ${e.clientY}
-      rect: ${rect[key]}`
-        }
+          console.log(rect[key])
+  
+      screenLog.innerHTML+= `${rect[key]} <br/>`
+       
       
       }
      
-    }
+    }}
   </script>
 </body>
 </html>
